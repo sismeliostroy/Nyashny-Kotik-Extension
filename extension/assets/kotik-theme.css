@@ -1,0 +1,85 @@
+/* Independent Nyashny Kotik visual layer. No third-party branding or assets. */
+:root {
+  --shape-xs: 10px;
+  --shape-sm: 14px;
+  --shape-md: 20px;
+  --shape-lg: 24px;
+  --shape-xl: 30px;
+  --background: 252 45% 97%;
+  --on-background: 252 30% 13%;
+  --surface: 250 40% 99%;
+  --on-surface: 252 30% 13%;
+  --surface-container-lowest: 0 0% 100%;
+  --surface-container-low: 252 55% 96%;
+  --surface-container: 252 45% 92%;
+  --surface-container-high: 253 38% 88%;
+  --surface-container-highest: 253 32% 83%;
+  --surface-variant: 253 30% 86%;
+  --on-surface-variant: 250 16% 38%;
+  --outline: 252 18% 50%;
+  --outline-variant: 252 28% 79%;
+  --primary: 261 63% 48%;
+  --on-primary: 0 0% 100%;
+  --primary-container: 259 72% 89%;
+  --on-primary-container: 261 58% 22%;
+  --secondary-container: 164 55% 86%;
+  --on-secondary-container: 166 64% 17%;
+  --tertiary: 165 55% 35%;
+  --tertiary-container: 164 60% 87%;
+  --ring: 261 63% 48%;
+  --radius: 20px;
+}
+
+[data-theme="dark"],
+:root.dark {
+  --background: 235 27% 10%;
+  --on-background: 245 35% 94%;
+  --surface: 235 27% 10%;
+  --on-surface: 245 35% 94%;
+  --surface-container-lowest: 235 29% 8%;
+  --surface-container-low: 235 25% 13%;
+  --surface-container: 235 24% 16%;
+  --surface-container-high: 236 23% 20%;
+  --surface-container-highest: 237 21% 25%;
+  --surface-variant: 238 20% 29%;
+  --on-surface-variant: 241 18% 76%;
+  --outline: 245 18% 58%;
+  --outline-variant: 238 18% 30%;
+  --primary: 260 88% 77%;
+  --on-primary: 260 55% 15%;
+  --primary-container: 260 38% 31%;
+  --on-primary-container: 258 90% 92%;
+  --secondary-container: 164 38% 25%;
+  --on-secondary-container: 160 60% 89%;
+  --tertiary: 161 62% 67%;
+  --tertiary-container: 165 42% 24%;
+  --ring: 260 88% 77%;
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at 92% 4%, hsl(162 70% 55% / 0.10), transparent 30%),
+    radial-gradient(circle at 8% 96%, hsl(267 90% 70% / 0.12), transparent 34%),
+    hsl(var(--background));
+}
+
+button,
+[role="button"] {
+  transition: transform 120ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active {
+  transform: scale(0.98);
+}
+
+[class*="rounded-"] {
+  border-color: hsl(var(--outline-variant) / 0.85);
+}
+
+code,
+kbd,
+pre {
+  font-variant-ligatures: none;
+}

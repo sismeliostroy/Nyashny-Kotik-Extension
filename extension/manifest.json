@@ -1,0 +1,82 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "1.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArtFog0XF1nmLrdO1ICiziV8foTAZ/02vYeKoJTx7ljAlDVfH8EcVBMvTskvCSLD7cUY2uW3GCpxukNAI3HbCIdESUnQ++md1K+RD+BTwdDdOIc7T2XQm5MMav5UHrIwHLMSbsYWwHa5deZcZKARqGfiW8Yzpvw7Wc62pldsvOJPAmQaO11WGh5FxkiLP3iXvadD8rRztw+QQgndRbhNhZhpT4xAsFxFcGBv+8lcSL4TePCxBF1pn0JDwaF6ZU80O9vA9fpN0hkUg17n64DUpCmVgZ7C/FuuYWx3dYC3LJGm8uW1c8RBgWGz6iHLwEMsqfNdgI3Q5bosFOOpKrL9/UwIDAQAB",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "homepage_url": "https://github.com/sismeliostroy/Nyashny-Kotik-Extension",
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "permissions": [
+    "proxy",
+    "storage",
+    "nativeMessaging",
+    "privacy",
+    "alarms",
+    "tabs",
+    "webNavigation",
+    "declarativeNetRequestWithHostAccess",
+    "clipboardRead"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "__MSG_actionTitle__",
+    "default_icon": {
+      "16": "assets/icons/16.png",
+      "32": "assets/icons/32.png",
+      "48": "assets/icons/48.png",
+      "128": "assets/icons/128.png"
+    },
+    "theme_icons": [
+      {
+        "size": 16,
+        "light": "assets/icons/16.png",
+        "dark": "assets/icons/dark/16.png"
+      },
+      {
+        "size": 32,
+        "light": "assets/icons/32.png",
+        "dark": "assets/icons/dark/32.png"
+      },
+      {
+        "size": 48,
+        "light": "assets/icons/48.png",
+        "dark": "assets/icons/dark/48.png"
+      },
+      {
+        "size": 128,
+        "light": "assets/icons/128.png",
+        "dark": "assets/icons/dark/128.png"
+      }
+    ]
+  },
+  "icons": {
+    "16": "assets/icons/16.png",
+    "32": "assets/icons/32.png",
+    "48": "assets/icons/48.png",
+    "128": "assets/icons/128.png"
+  },
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "src/sidepanel/index.html",
+        "src/blocked/index.html"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "minimum_chrome_version": "120"
+}

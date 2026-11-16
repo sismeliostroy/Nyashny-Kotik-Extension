@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Няшный котик 3000 - VLESS Reality、VMess、Trojan、Shadowsocks、Hysteria2 代理",
+    "description": "Extension name shown in the browser and Web Store. Keep 'Няшный котик 3000' + latin protocol tokens (VLESS, VMess, Trojan) for search; localize only the connective words. Keep ≤75 chars."
+  },
+  "extDescription": {
+    "message": "免费的 Chrome 代理客户端。通过节点链接或订阅连接 VLESS、VMess、Trojan、Shadowsocks 和 Hysteria2 服务器。",
+    "description": "Web Store / manifest description (keep ≤132 chars). Protocol names (VLESS, VMess, …) are product names — do not translate them."
+  },
+  "actionTitle": {
+    "message": "Няшный котик 3000",
+    "description": "Toolbar button tooltip before the service worker stamps the live status. Brand — keep as 'Няшный котик 3000'."
+  }
+}

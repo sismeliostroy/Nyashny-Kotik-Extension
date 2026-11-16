@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  helper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: helper/go.mod
+          cache-dependency-path: helper/go.sum
+      - run: go test ./...
+        working-directory: helper
+      - run: ./scripts/build-helper.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: helper-test-builds
+          path: dist/
+          retention-days: 3
+
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: ./scripts/static-check.sh
+
+  powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows PowerShell 5.1 parser check
+        shell: powershell
+        run: |
+          $errors = $null
+          [void][System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path install/windows.ps1), [ref]$null, [ref]$errors)
+          if ($errors.Count) { $errors | Format-List | Out-String | Write-Error; exit 1 }
+          [void][System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path uninstall/windows.ps1), [ref]$null, [ref]$errors)
+          if ($errors.Count) { $errors | Format-List | Out-String | Write-Error; exit 1 }
+      - name: ASCII entry scripts
+        shell: powershell
+        run: |
+          foreach ($f in 'install/windows.ps1','uninstall/windows.ps1') {
+            $bytes = [IO.File]::ReadAllBytes((Resolve-Path $f))
+            if ($bytes | Where-Object { $_ -gt 127 }) { throw "$f is not ASCII" }
+          }

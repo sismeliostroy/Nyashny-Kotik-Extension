@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Няшный котик 3000 - VLESS Reality, VMess, Trojan, Shadowsocks, Hysteria2 proxy",
+    "description": "Extension name shown in the browser and Web Store. Keep 'Няшный котик 3000' + latin protocol tokens (VLESS, VMess, Trojan) for search; localize only the connective words ('proxy for … & more'). Keep ≤75 chars."
+  },
+  "extDescription": {
+    "message": "Free proxy client for Chrome. Connect to VLESS, VMess, Trojan, Shadowsocks and Hysteria2 servers with a link or subscription.",
+    "description": "Web Store / manifest description (keep ≤132 chars). Open with what Няшный котик 3000 is (a free proxy client for Chrome) so search answers can quote it, then name the protocols for search weight. Protocol/core names (VLESS, VMess, sing-box, …) are product names - do not translate them."
+  },
+  "actionTitle": {
+    "message": "Няшный котик 3000",
+    "description": "Toolbar button tooltip before the service worker stamps the live status. Brand — keep as 'Няшный котик 3000'."
+  }
+}
