@@ -45,13 +45,19 @@ func TestDelay(t *testing.T) {
 
 	cases := map[string]string{
 		"timeout": "delay: timeout",
-		"refused": "delay: an error occurred in the delay test: connection refused by peer",
+		"refused": "delay: an error occurred in the delay test",
 		"garbage": "delay: HTTP 200",
 		"zero":    "delay: HTTP 200",
 		"exit":    "delay: sing-box exited: start service: tester refused",
 	}
 	for behavior, want := range cases {
-		if _, err := sup.delay(delayArgs{Config: delayConfig(behavior, nil), TimeoutMs: 1000}); err == nil || err.Error() != want {
+		_, err := sup.delay(delayArgs{Config: delayConfig(behavior, nil), TimeoutMs: 1000})
+		matches := err != nil && err.Error() == want
+		if behavior == "refused" {
+			// The fake core's socket error suffix differs by operating system.
+			matches = err != nil && strings.HasPrefix(err.Error(), want)
+		}
+		if !matches {
 			t.Errorf("%s: got %v, want %q", behavior, err, want)
 		}
 	}

@@ -21,8 +21,14 @@ if grep -RinE '(gh[pousr]_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|BEGIN (RSA|OPENS
   exit 1
 fi
 
-if grep -RinE 'noctis|c0nn3ct' "$ROOT/extension"; then
-  echo 'Noctis user-facing branding detected in extension.' >&2
+if grep -RinE 'n[o]ctis|c0nn3ct' \
+  "$ROOT/extension/assets" \
+  "$ROOT/extension/_locales" \
+  "$ROOT/extension/src" \
+  "$ROOT/extension/manifest.json" \
+  "$ROOT/extension/service-worker-loader.js" \
+  "$ROOT/extension/browser-lifecycle.mjs"; then
+  echo 'Foreign user-facing branding detected in extension.' >&2
   exit 1
 fi
 

@@ -1,9 +1,10 @@
 # Provenance
 
-The extension is a derivative of Noctis 1.6.5. The rights holder explicitly
-authorized Sergey Dzhuraev to modify, publish and distribute this derivative
-under the MIT License. The permission record is retained privately by the
-project owner; it contains personal correspondence and is not published.
+The extension contains an authorized derivative of third-party extension code.
+The rights holder explicitly authorized Sergey Dzhuraev to modify, publish and
+distribute this derivative under the MIT License. The permission record is
+retained privately by the project owner; it contains personal correspondence
+and is not published.
 
 The helper started from the public MIT helper snapshot at commit
 `b712793f93730f4e3fcc037f9cc05de43e7ec3be`. Runtime branding and private

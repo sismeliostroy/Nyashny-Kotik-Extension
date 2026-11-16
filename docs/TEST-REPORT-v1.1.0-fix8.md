@@ -19,7 +19,7 @@ Date: 2026-11-16
 - Listener and child process absent after `stop`: PASS.
 - Official upstream archive digests checked before repackaging: PASS.
 - Release sidecars and aggregate `SHA256SUMS`: PASS.
-- Secret-pattern scan and user-facing Noctis branding scan: PASS.
+- Secret-pattern and foreign-branding scans: PASS.
 
 ## CI / publication gates
 

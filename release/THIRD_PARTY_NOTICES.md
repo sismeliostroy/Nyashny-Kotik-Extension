@@ -1,15 +1,14 @@
 # Third-party notices
 
-This repository contains a permitted derivative of the Noctis browser
-extension and helper. The Noctis rights holder granted Sergey Dzhuraev
-permission to modify, publish and distribute this derivative under the MIT
-License. The private permission record is retained by the project owner and is
-not part of this public repository.
+This repository contains a permitted derivative of third-party browser
+extension code. Its rights holder granted Sergey Dzhuraev permission to
+modify, publish and distribute this derivative under the MIT License. The
+private permission record is retained by the project owner and is not part of
+this public repository.
 
-The Native Messaging helper is derived from the MIT-licensed helper published
-at https://github.com/c0nn3ct-info/noctis (source snapshot
-`b712793f93730f4e3fcc037f9cc05de43e7ec3be`). Its original copyright notice
-and license are preserved in `LICENSES/NOCTIS-HELPER-MIT.txt`.
+The Native Messaging helper is derived from an MIT-licensed helper (source
+snapshot `b712793f93730f4e3fcc037f9cc05de43e7ec3be`). Its original copyright
+notice and license are preserved in `LICENSES/UPSTREAM-HELPER-MIT.txt`.
 
 Release assets optionally include these unmodified upstream programs:
 
